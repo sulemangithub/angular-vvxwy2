@@ -1,0 +1,35 @@
+<div class="container">
+
+<div *ngIf="loggedInUser == null">
+<nav style="margin-left:80%">
+  <a href="#" (click)="changeview(1)" class="btn btn-primary" style="margin-right:10px"> login </a>
+  <a href="#" (click)="changeview(2)" class="btn btn-primary"> register</a>
+</nav>
+
+<div *ngIf="loginFlag">
+    <p>Please login</p>
+    <p>{{message}}</p>
+    Enter email : <input type="text" name="email" #email class="form-control" style="width:70%">
+    Enter password : <input type="password" name="passowrd" #password class="form-control" style="width:70%" >
+    <button class="form-control" style="width:70%" (click)="authenticate(email.value,password.value)">Log in</button>
+</div>
+
+<div *ngIf="registerFlag">
+    <p>Please register</p>
+    <p>{{message}}</p>
+    Enter email : <input type="text" name="email" #email1 class="form-control" style="width:70%">
+    Enter password : <input type="password" name="passowrd" #password1 class="form-control" style="width:70%">
+    Enter name : <input type="text" name="name" #name class="form-control" style="width:70%">
+    Enter city : <input type="text" name="city" #city class="form-control" style="width:70%">
+    Enter phone : <input type="text" name="phone" #phone class="form-control" style="width:70%">
+    <button class="form-control" style="width:70%" (click)="register(email1.value,password1.value,name.value,city.value,phone.value)" >Sign up</button >
+</div>
+</div>
+<div *ngIf="loggedInUser != null">
+  <nav style="margin-left:80%">
+  <a href="#" (click)="logout()" class="btn btn-primary" style="margin-right:10px"> logout </a>  
+</nav>
+  <home [loggedInUser]="loggedInUser"></home>
+</div>
+
+</div>

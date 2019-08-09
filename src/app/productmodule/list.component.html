@@ -1,0 +1,28 @@
+<div>
+  <label class="alert alert-info" *ngIf="message !='' ">{{message}}</label>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>CATEGORY</th>
+        <th>PRICE</th>
+        <th>MDATE</th>
+        <th>EDATE</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productlist">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.mDate}}</td>
+        <td>{{product.eDate}}</td>
+        <td><button class="btn btn-primary" (click)="addToCart(product)">add to cart</button></td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

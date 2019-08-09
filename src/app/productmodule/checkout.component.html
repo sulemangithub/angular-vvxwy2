@@ -1,0 +1,6 @@
+<div (load)="getTotalBill()" *ngIf="totalBill != 0">
+  <h4>Total bill is : {{totalBill}}</h4>
+</div>
+<div *ngIf="totalBill == 0">
+  <h4>You do not have anything in your cart!</h4>
+</div>

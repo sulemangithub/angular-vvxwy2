@@ -1,0 +1,18 @@
+<h4>Welcome {{loggedInUser.name}}</h4>
+<nav>
+  <button class="btn btn-info" (click)="changeView('list')">view products</button>
+  <button class="btn btn-info" (click)="changeView('cart')">view cart</button>
+  <button class="btn btn-info" (click)="changeView('checkout')">checkout</button>
+</nav>
+
+<div *ngIf="activeComponent=='list'">
+  <list></list>
+</div>
+
+<div *ngIf="activeComponent=='cart'">
+  <cart></cart>
+</div>
+
+<div *ngIf="activeComponent=='checkout'">
+  <checkout></checkout>
+</div>
